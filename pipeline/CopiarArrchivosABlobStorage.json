@@ -63,7 +63,8 @@
 													"sheetName": {
 														"value": "@activity('Metadata archivos PC').output.itemName",
 														"type": "Expression"
-													}
+													},
+													"index": 0
 												}
 											}
 										]
