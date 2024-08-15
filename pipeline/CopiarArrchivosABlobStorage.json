@@ -110,7 +110,11 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "",
+								"value": ""
+							}
 						}
 					]
 				}
@@ -184,8 +188,8 @@
 			}
 		],
 		"variables": {
-			"blobFileList": {
-				"type": "String"
+			"Elementoactual": {
+				"type": "Array"
 			}
 		},
 		"folder": {
