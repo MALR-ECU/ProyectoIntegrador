@@ -18,9 +18,16 @@
 		"type": "Excel",
 		"typeProperties": {
 			"location": {
-				"type": "FileServerLocation"
+				"type": "FileServerLocation",
+				"fileName": {
+					"value": "@dataset().sheetName",
+					"type": "Expression"
+				}
 			},
-			"sheetIndex": 0
+			"sheetIndex": {
+				"value": "@dataset().index",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	},
