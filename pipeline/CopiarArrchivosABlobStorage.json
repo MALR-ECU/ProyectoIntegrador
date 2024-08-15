@@ -28,7 +28,14 @@
 						{
 							"name": "If Condition1",
 							"type": "IfCondition",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Set variable1",
+									"dependencyConditions": [
+										"Completed"
+									]
+								}
+							],
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
@@ -85,7 +92,7 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"sheetName": {
-														"value": "@activity('Metadata archivos PC').output.itemName",
+														"value": "@variables('Elementoactual')",
 														"type": "Expression"
 													},
 													"index": 0
@@ -112,8 +119,11 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "",
-								"value": ""
+								"variableName": "Elementoactual",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
 							}
 						}
 					]
@@ -189,7 +199,7 @@
 		],
 		"variables": {
 			"Elementoactual": {
-				"type": "Array"
+				"type": "String"
 			}
 		},
 		"folder": {
