@@ -22,7 +22,8 @@
 				"fileName": {
 					"value": "@dataset().sheetName",
 					"type": "Expression"
-				}
+				},
+				"folderPath": "RegistrosInspeccion8Rnd"
 			},
 			"sheetIndex": {
 				"value": "@dataset().index",
