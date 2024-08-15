@@ -109,6 +109,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "Extracción"
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-07-25T05:04:29Z"
 	},

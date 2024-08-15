@@ -43,6 +43,7 @@
 						]
 					}
 				],
+				"userProperties": [],
 				"typeProperties": {
 					"expression": {
 						"value": "@greater(length(activity('Metadata archivos PC').output.childItems), 0)",
@@ -69,6 +70,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "Extracción"
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-07-25T04:32:01Z"
 	},
