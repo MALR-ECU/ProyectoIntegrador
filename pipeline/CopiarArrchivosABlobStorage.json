@@ -58,7 +58,13 @@
 										"inputs": [
 											{
 												"referenceName": "RegistroInspeccionExcel",
-												"type": "DatasetReference"
+												"type": "DatasetReference",
+												"parameters": {
+													"sheetName": {
+														"value": "@activity('Metadata archivos PC').output.itemName",
+														"type": "Expression"
+													}
+												}
 											}
 										]
 									}
