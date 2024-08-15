@@ -34,72 +34,7 @@
 								"expression": {
 									"value": "@not(contains(activity('Metadata archivos Blob Storage PI').output.childItems, item().name))",
 									"type": "Expression"
-								},
-								"ifTrueActivities": [
-									{
-										"name": "Copy data1",
-										"type": "Copy",
-										"dependsOn": [],
-										"policy": {
-											"timeout": "0.12:00:00",
-											"retry": 0,
-											"retryIntervalInSeconds": 30,
-											"secureOutput": false,
-											"secureInput": false
-										},
-										"userProperties": [],
-										"typeProperties": {
-											"source": {
-												"type": "ExcelSource",
-												"storeSettings": {
-													"type": "FileServerReadSettings",
-													"recursive": true,
-													"enablePartitionDiscovery": false
-												}
-											},
-											"sink": {
-												"type": "DelimitedTextSink",
-												"storeSettings": {
-													"type": "AzureBlobStorageWriteSettings",
-													"copyBehavior": "FlattenHierarchy"
-												},
-												"formatSettings": {
-													"type": "DelimitedTextWriteSettings",
-													"quoteAllText": true,
-													"fileExtension": ".txt"
-												}
-											},
-											"enableStaging": false,
-											"translator": {
-												"type": "TabularTranslator",
-												"typeConversion": true,
-												"typeConversionSettings": {
-													"allowDataTruncation": true,
-													"treatBooleanAsNumber": false
-												}
-											}
-										},
-										"inputs": [
-											{
-												"referenceName": "RegistroInspeccionExcel",
-												"type": "DatasetReference",
-												"parameters": {
-													"sheetName": {
-														"value": "@variables('Elementoactual')",
-														"type": "Expression"
-													},
-													"index": 0
-												}
-											}
-										],
-										"outputs": [
-											{
-												"referenceName": "RegistrosInspeccionSCV",
-												"type": "DatasetReference"
-											}
-										]
-									}
-								]
+								}
 							}
 						}
 					]
