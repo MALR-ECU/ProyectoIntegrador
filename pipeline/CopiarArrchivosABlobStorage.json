@@ -175,8 +175,7 @@
 		],
 		"variables": {
 			"Elementoactual": {
-				"type": "String",
-				"defaultValue": "\"\""
+				"type": "String"
 			}
 		},
 		"folder": {
