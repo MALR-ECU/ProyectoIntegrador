@@ -132,7 +132,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "ArchivosPC",
+					"value": {
+						"value": "@activity('Metadata archivos PC').output.childItems",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
