@@ -20,7 +20,7 @@
 				],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Metadata archivos PC').output.childItems",
+						"value": "@variables('ArchivosPC')",
 						"type": "Expression"
 					},
 					"isSequential": false
