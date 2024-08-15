@@ -1,0 +1,95 @@
+{
+	"name": "RegistrosInspeccionSCV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "almacenpi"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID tubo",
+				"type": "String"
+			},
+			{
+				"name": "Lado",
+				"type": "String"
+			},
+			{
+				"name": "Conexión",
+				"type": "String"
+			},
+			{
+				"name": "Diametro",
+				"type": "String"
+			},
+			{
+				"name": "Grado",
+				"type": "String"
+			},
+			{
+				"name": "Estado",
+				"type": "String"
+			},
+			{
+				"name": "Causa de rechazo",
+				"type": "String"
+			},
+			{
+				"name": "Desviacion diametro maxima",
+				"type": "String"
+			},
+			{
+				"name": "Desviacion diametro minima",
+				"type": "String"
+			},
+			{
+				"name": "Desviación diametro",
+				"type": "String"
+			},
+			{
+				"name": "Desviacion ovalidad",
+				"type": "String"
+			},
+			{
+				"name": "Paso",
+				"type": "String"
+			},
+			{
+				"name": "Longitud rosca",
+				"type": "String"
+			},
+			{
+				"name": "Turno",
+				"type": "String"
+			},
+			{
+				"name": "Fecha",
+				"type": "String"
+			},
+			{
+				"name": "Inspector",
+				"type": "String"
+			},
+			{
+				"name": "Tiempo Inspeccion",
+				"type": "String"
+			},
+			{
+				"name": "ID",
+				"type": "String"
+			}
+		]
+	}
+}
