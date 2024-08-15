@@ -1,0 +1,17 @@
+{
+	"name": "LinkCarpetaLocalInspeccion",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "C:\\Users\\pc\\Documents\\",
+			"userId": "mi.c.kyangel@hotmail.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkNzI1NzE1Yi1jMWQ3LTRmYTEtYTY1ZC1mNDEwMDRlY2Q3NjgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IRPCInspeccion",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

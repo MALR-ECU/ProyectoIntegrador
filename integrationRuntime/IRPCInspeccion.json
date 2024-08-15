@@ -1,0 +1,7 @@
+{
+	"name": "IRPCInspeccion",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "runtime auto-hospedado PC de inspección"
+	}
+}

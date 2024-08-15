@@ -1,0 +1,9 @@
+{
+	"name": "miguelloor-df",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "16efd6b6-f908-4571-9dfd-840592968d93",
+		"tenantId": "ec1acf7e-db3c-411f-b454-72424ce5091a"
+	}
+}

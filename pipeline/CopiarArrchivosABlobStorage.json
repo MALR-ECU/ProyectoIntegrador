@@ -1,0 +1,140 @@
+{
+	"name": "CopiarArrchivosABlobStorage",
+	"properties": {
+		"activities": [
+			{
+				"name": "ciclo de for nombre hojas",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Metadata archivos PC",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Metadata archivos PC').output.childItems",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@not(contains(activity('Metadata archivos Blob Storage PI').output.childItems, item().name))",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "Metadata archivos Blob Storage PI",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "NombresArchivosBSPI",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "BinaryReadSettings"
+					}
+				}
+			},
+			{
+				"name": "blobFileList",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Metadata archivos Blob Storage PI",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "blobFileList",
+					"value": {
+						"value": "@activity('Metadata archivos Blob Storage PI').output.childItems",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Metadata archivos PC",
+				"type": "GetMetadata",
+				"dependsOn": [
+					{
+						"activity": "Metadata archivos Blob Storage PI",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "NombresArchivosPC",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "FileServerReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "BinaryReadSettings"
+					}
+				}
+			}
+		],
+		"variables": {
+			"blobFileList": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-07-25T05:04:29Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
