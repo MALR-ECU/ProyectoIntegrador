@@ -107,6 +107,9 @@
 		"variables": {
 			"Elementoactual": {
 				"type": "String"
+			},
+			"ArchivosBS": {
+				"type": "Array"
 			}
 		},
 		"folder": {
