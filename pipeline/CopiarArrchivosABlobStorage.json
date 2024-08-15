@@ -67,30 +67,6 @@
 				}
 			},
 			{
-				"name": "blobFileList",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Metadata archivos Blob Storage PI",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "blobFileList",
-					"value": {
-						"value": "@activity('Metadata archivos Blob Storage PI').output.childItems",
-						"type": "Expression"
-					}
-				}
-			},
-			{
 				"name": "Metadata archivos PC",
 				"type": "GetMetadata",
 				"dependsOn": [
