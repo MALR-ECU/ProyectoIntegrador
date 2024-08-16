@@ -134,6 +134,7 @@
 						"value": "@variables('ArchivosPC')",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "If Condition1",
