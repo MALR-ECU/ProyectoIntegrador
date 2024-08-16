@@ -182,7 +182,13 @@
 										"outputs": [
 											{
 												"referenceName": "RegistrosInspeccionSCV",
-												"type": "DatasetReference"
+												"type": "DatasetReference",
+												"parameters": {
+													"NameSheet": {
+														"value": "@variables('nombreArchivo')",
+														"type": "Expression"
+													}
+												}
 											}
 										]
 									}
