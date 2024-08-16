@@ -133,7 +133,15 @@
 					"items": {
 						"value": "@variables('ArchivosPC')",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": []
+						}
+					]
 				}
 			}
 		],
