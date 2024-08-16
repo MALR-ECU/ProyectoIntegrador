@@ -93,7 +93,7 @@
 							"type": "IfCondition",
 							"dependsOn": [
 								{
-									"activity": "Set variable1",
+									"activity": "ArchivoActual",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -108,7 +108,7 @@
 							}
 						},
 						{
-							"name": "Set variable1",
+							"name": "ArchivoActual",
 							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {
