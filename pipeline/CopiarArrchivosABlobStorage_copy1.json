@@ -130,7 +130,7 @@
 		],
 		"variables": {
 			"ItemForEach": {
-				"type": "String"
+				"type": "Array"
 			},
 			"ArchivosBS": {
 				"type": "Array"
