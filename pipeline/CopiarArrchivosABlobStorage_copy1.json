@@ -152,7 +152,7 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"sheetName": {
-														"value": "@variables('ItemForEach')",
+														"value": "@variables('nombreArchivo')",
 														"type": "Expression"
 													},
 													"index": 0
@@ -168,9 +168,6 @@
 			}
 		],
 		"variables": {
-			"ItemForEach": {
-				"type": "String"
-			},
 			"ArchivosBS": {
 				"type": "Array"
 			},
