@@ -124,37 +124,14 @@
 								},
 								"ifFalseActivities": [
 									{
-										"name": "Copy data1",
-										"type": "Copy",
+										"name": "Set variable4",
+										"type": "SetVariable",
 										"dependsOn": [],
 										"policy": {
-											"timeout": "0.12:00:00",
-											"retry": 0,
-											"retryIntervalInSeconds": 30,
 											"secureOutput": false,
 											"secureInput": false
 										},
-										"userProperties": [],
-										"typeProperties": {
-											"source": {
-												"type": "ExcelSource",
-												"storeSettings": {
-													"type": "FileServerReadSettings",
-													"recursive": true,
-													"enablePartitionDiscovery": false
-												}
-											},
-											"enableStaging": false
-										},
-										"inputs": [
-											{
-												"referenceName": "RegistroInspeccionExcel",
-												"type": "DatasetReference",
-												"parameters": {
-													"index": 0
-												}
-											}
-										]
+										"userProperties": []
 									}
 								]
 							}
