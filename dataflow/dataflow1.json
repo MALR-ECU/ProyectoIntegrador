@@ -12,7 +12,11 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "CrearIDUnico",
@@ -23,7 +27,11 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(IDUnico = ERROR_FUNCTION('concat(__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__yyyy__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__MM__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__dd__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__HH__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__mm__SINGLE_QUOTE__), // Minutos__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__ss__SINGLE_QUOTE__)__NEW_LINE_R____NEW_LINE_N__)__NEW_LINE_R____NEW_LINE_N__')) ~> CrearIDUnico"
+				"source1 derive(IDUnico = ERROR_FUNCTION('concat(__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__yyyy__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__MM__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__dd__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__HH__SINGLE_QUOTE__),__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__mm__SINGLE_QUOTE__), // Minutos__NEW_LINE_R____NEW_LINE_N__  formatDateTime(toTimestamp(Fecha), __SINGLE_QUOTE__ss__SINGLE_QUOTE__)__NEW_LINE_R____NEW_LINE_N__)__NEW_LINE_R____NEW_LINE_N__')) ~> CrearIDUnico",
+				"CrearIDUnico sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
