@@ -117,17 +117,8 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "pipelineReturnValue",
-								"value": [
-									{
-										"key": "Item",
-										"value": {
-											"type": "Object",
-											"content": "@item()"
-										}
-									}
-								],
-								"setSystemVariable": true
+								"variableName": "",
+								"value": ""
 							}
 						}
 					]
