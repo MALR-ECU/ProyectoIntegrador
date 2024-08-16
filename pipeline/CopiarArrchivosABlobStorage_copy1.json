@@ -210,9 +210,6 @@
 											"dataflow": {
 												"referenceName": "dataflow1",
 												"type": "DataFlowReference",
-												"parameters": {
-													"parametro1": "concat(\r\n  formatDateTime(toTimestamp(Fecha), 'yyyy'),\r\n  formatDateTime(toTimestamp(Fecha), 'MM'),\r\n  formatDateTime(toTimestamp(Fecha), 'dd'),\r\n  formatDateTime(toTimestamp(Fecha), 'HH'),\r\n  formatDateTime(toTimestamp(Fecha), 'mm'),\r\n  formatDateTime(toTimestamp(Fecha), 'ss')\r\n)"
-												},
 												"datasetParameters": {
 													"source1": {
 														"sheetName": {
