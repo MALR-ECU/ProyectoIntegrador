@@ -154,7 +154,7 @@
 		],
 		"variables": {
 			"ItemForEach": {
-				"type": "Array"
+				"type": "String"
 			},
 			"ArchivosBS": {
 				"type": "Array"
