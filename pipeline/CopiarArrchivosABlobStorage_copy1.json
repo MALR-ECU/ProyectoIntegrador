@@ -37,7 +37,7 @@
 				"type": "GetMetadata",
 				"dependsOn": [
 					{
-						"activity": "Set variable1",
+						"activity": "Metadata archivos Blob Storage PI",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -70,32 +70,8 @@
 				}
 			},
 			{
-				"name": "Set variable1",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Metadata archivos Blob Storage PI",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "ArchivosBS",
-					"value": {
-						"value": "@activity('Metadata archivos Blob Storage PI').output.childItems",
-						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "Set variable2",
-				"type": "SetVariable",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [
 					{
 						"activity": "Metadata archivos PC",
@@ -104,36 +80,8 @@
 						]
 					}
 				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "ArchivosPC",
-					"value": {
-						"value": "@activity('Metadata archivos PC').output.childItems",
-						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "ForEach1",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Set variable2",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@variables('ArchivosPC')",
-						"type": "Expression"
-					},
 					"isSequential": false,
 					"activities": [
 						{
