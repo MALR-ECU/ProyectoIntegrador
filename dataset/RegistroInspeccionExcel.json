@@ -25,10 +25,7 @@
 				},
 				"folderPath": "RegistrosInspeccion8Rnd"
 			},
-			"sheetIndex": {
-				"value": "@dataset().index",
-				"type": "Expression"
-			},
+			"sheetIndex": "0",
 			"firstRowAsHeader": true
 		},
 		"schema": []
