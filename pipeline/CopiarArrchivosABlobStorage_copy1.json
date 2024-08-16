@@ -127,7 +127,7 @@
 				"typeProperties": {
 					"variableName": "ArchivosPC",
 					"value": {
-						"value": "@activity('Metadata archivos PC').output.childItemsactivity('Metadata archivos PC').output.itemName",
+						"value": "@activity('Metadata archivos PC').output.childItems",
 						"type": "Expression"
 					}
 				}
