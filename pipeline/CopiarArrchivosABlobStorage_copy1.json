@@ -97,7 +97,19 @@
 								"expression": {
 									"value": "@contains(activity('Metadata archivos Blob Storage PI').output.childItems,item())",
 									"type": "Expression"
-								}
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Set variable1",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": []
+									}
+								]
 							}
 						}
 					]
@@ -105,7 +117,7 @@
 			}
 		],
 		"variables": {
-			"Elementoactual": {
+			"ItemForEach": {
 				"type": "String"
 			},
 			"ArchivosBS": {
