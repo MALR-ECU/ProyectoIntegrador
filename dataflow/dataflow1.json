@@ -6,13 +6,21 @@
 			"sources": [
 				{
 					"name": "source1"
+				},
+				{
+					"name": "source2"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     parámetro1 as string",
+				"}",
 				"source(allowSchemaDrift: false,",
-				"     validateSchema: false) ~> source1"
+				"     validateSchema: false) ~> source1",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source2"
 			]
 		}
 	}
