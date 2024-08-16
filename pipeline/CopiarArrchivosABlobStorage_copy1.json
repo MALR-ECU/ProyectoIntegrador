@@ -143,7 +143,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@item()",
+									"value": "@contains(activity('Metadata archivos Blob Storage PI').output.childItems,item())",
 									"type": "Expression"
 								}
 							}
