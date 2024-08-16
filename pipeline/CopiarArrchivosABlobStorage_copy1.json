@@ -100,7 +100,7 @@
 							"typeProperties": {
 								"variableName": "ItemForEach",
 								"value": {
-									"value": "@createArray(item())",
+									"value": "@item().name",
 									"type": "Expression"
 								}
 							}
@@ -135,7 +135,7 @@
 										"typeProperties": {
 											"variableName": "nombreArchivo",
 											"value": {
-												"value": "@variables('ItemForEach')[0]",
+												"value": "@{variables('ItemForEach')[0]['name']}",
 												"type": "Expression"
 											}
 										}
