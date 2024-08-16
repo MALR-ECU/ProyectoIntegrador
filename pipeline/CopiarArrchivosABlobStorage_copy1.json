@@ -212,6 +212,19 @@
 										},
 										"userProperties": [],
 										"typeProperties": {
+											"dataflow": {
+												"referenceName": "dataflow1",
+												"type": "DataFlowReference",
+												"datasetParameters": {
+													"source1": {
+														"sheetName": {
+															"value": "@variables('nombreArchivo')",
+															"type": "Expression"
+														},
+														"index": 0
+													}
+												}
+											},
 											"compute": {
 												"coreCount": 8,
 												"computeType": "General"
