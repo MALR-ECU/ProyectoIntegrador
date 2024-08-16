@@ -100,7 +100,7 @@
 							"typeProperties": {
 								"variableName": "ItemForEach",
 								"value": {
-									"value": "@item()",
+									"value": "@createArray(item())",
 									"type": "Expression"
 								}
 							}
