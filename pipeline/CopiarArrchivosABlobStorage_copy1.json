@@ -139,7 +139,13 @@
 							"name": "Filter1",
 							"type": "Filter",
 							"dependsOn": [],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"items": {
+									"value": "@activity('Metadata archivos PC').output.childItems",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
