@@ -10,6 +10,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"name": "source2"
 				}
 			],
 			"sinks": [
@@ -17,21 +20,14 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [
-				{
-					"name": "CrearIDUnico",
-					"description": "Genera un ID Único"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
-				"parameters{",
-				"     parametro1 as string",
-				"}",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive() ~> CrearIDUnico",
-				"CrearIDUnico sink(validateSchema: false,",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source2",
+				"source1 sink(validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     store: 'cache',",
