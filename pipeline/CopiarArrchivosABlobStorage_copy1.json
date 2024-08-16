@@ -98,7 +98,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "ItemForEach",
+								"variableName": "nombreArchivo",
 								"value": {
 									"value": "@item().name",
 									"type": "Expression"
@@ -136,8 +136,29 @@
 										},
 										"userProperties": [],
 										"typeProperties": {
+											"source": {
+												"type": "ExcelSource",
+												"storeSettings": {
+													"type": "FileServerReadSettings",
+													"recursive": true,
+													"enablePartitionDiscovery": false
+												}
+											},
 											"enableStaging": false
-										}
+										},
+										"inputs": [
+											{
+												"referenceName": "RegistroInspeccionExcel",
+												"type": "DatasetReference",
+												"parameters": {
+													"sheetName": {
+														"value": "@variables('ItemForEach')",
+														"type": "Expression"
+													},
+													"index": 0
+												}
+											}
+										]
 									}
 								]
 							}
