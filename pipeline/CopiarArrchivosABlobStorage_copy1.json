@@ -83,10 +83,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Metadata archivos PC').output.childItems",
+						"value": "@variables('ArchivosPC')",
 						"type": "Expression"
 					},
-					"isSequential": false,
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Set variable3",
