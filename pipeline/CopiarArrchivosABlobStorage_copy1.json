@@ -3,30 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ciclo de for nombre hojas",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Set variable2",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [
-					{
-						"name": ""
-					}
-				],
-				"typeProperties": {
-					"items": {
-						"value": "@variables('ArchivosPC')",
-						"type": "Expression"
-					},
-					"isSequential": false
-				}
-			},
-			{
 				"name": "Metadata archivos Blob Storage PI",
 				"type": "GetMetadata",
 				"dependsOn": [],
@@ -139,6 +115,57 @@
 						"value": "@activity('Metadata archivos PC').output.childItems",
 						"type": "Expression"
 					}
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Set variable2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Metadata archivos PC').output",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Get Metadata1",
+							"type": "GetMetadata",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "NombresArchivosBSPI",
+									"type": "DatasetReference"
+								},
+								"fieldList": [
+									"childItems"
+								],
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "BinaryReadSettings"
+								}
+							}
+						}
+					]
 				}
 			}
 		],
