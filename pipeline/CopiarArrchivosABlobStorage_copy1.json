@@ -91,34 +91,13 @@
 						{
 							"name": "If Condition1",
 							"type": "IfCondition",
-							"dependsOn": [
-								{
-									"activity": "ArchivoActual",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
+							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
 									"value": "@contains(activity('Metadata archivos Blob Storage PI').output.childItems,item())",
 									"type": "Expression"
 								}
-							}
-						},
-						{
-							"name": "ArchivoActual",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "",
-								"value": ""
 							}
 						}
 					]
