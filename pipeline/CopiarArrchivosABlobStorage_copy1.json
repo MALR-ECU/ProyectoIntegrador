@@ -80,11 +80,7 @@
 						]
 					}
 				],
-				"userProperties": [
-					{
-						"name": "prueba"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"items": {
 						"value": "@variables('ArchivosPC')",
