@@ -134,18 +134,6 @@
 									}
 								]
 							}
-						},
-						{
-							"name": "Filter1",
-							"type": "Filter",
-							"dependsOn": [],
-							"userProperties": [],
-							"typeProperties": {
-								"items": {
-									"value": "@activity('Metadata archivos PC').output.childItems",
-									"type": "Expression"
-								}
-							}
 						}
 					]
 				}
