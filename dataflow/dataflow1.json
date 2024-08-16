@@ -1,0 +1,44 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "RegistrosInspeccionSCV",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          {ID tubo} as string,",
+				"          Lado as string,",
+				"          {Conexión} as string,",
+				"          Diametro as string,",
+				"          Grado as string,",
+				"          Estado as string,",
+				"          {Causa de rechazo} as string,",
+				"          {Desviacion diametro maxima} as string,",
+				"          {Desviacion diametro minima} as string,",
+				"          {Desviación diametro} as string,",
+				"          {Desviacion ovalidad} as string,",
+				"          Paso as string,",
+				"          {Longitud rosca} as string,",
+				"          Turno as string,",
+				"          Fecha as string,",
+				"          Inspector as string,",
+				"          {Tiempo Inspeccion} as string,",
+				"          ID as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1"
+			]
+		}
+	}
+}
