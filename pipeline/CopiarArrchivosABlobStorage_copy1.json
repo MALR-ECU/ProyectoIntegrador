@@ -82,7 +82,11 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"isSequential": false,
+					"items": {
+						"value": "@activity('Metadata archivos PC').output.childItems",
+						"type": "Expression"
+					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "If Condition1",
@@ -93,42 +97,7 @@
 								"expression": {
 									"value": "@contains(activity('Metadata archivos Blob Storage PI').output.childItems,item())",
 									"type": "Expression"
-								},
-								"ifFalseActivities": [
-									{
-										"name": "Copy data1",
-										"type": "Copy",
-										"dependsOn": [],
-										"policy": {
-											"timeout": "0.12:00:00",
-											"retry": 0,
-											"retryIntervalInSeconds": 30,
-											"secureOutput": false,
-											"secureInput": false
-										},
-										"userProperties": [],
-										"typeProperties": {
-											"source": {
-												"type": "ExcelSource",
-												"storeSettings": {
-													"type": "FileServerReadSettings",
-													"recursive": true,
-													"enablePartitionDiscovery": false
-												}
-											},
-											"enableStaging": false
-										},
-										"inputs": [
-											{
-												"referenceName": "RegistroInspeccionExcel",
-												"type": "DatasetReference",
-												"parameters": {
-													"index": 0
-												}
-											}
-										]
-									}
-								]
+								}
 							}
 						}
 					]
