@@ -74,7 +74,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Metadata archivos PC",
+						"activity": "Set variable2",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -128,14 +128,27 @@
 				}
 			},
 			{
-				"name": "Set variable1",
+				"name": "Set variable2",
 				"type": "SetVariable",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Metadata archivos PC",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "ArchivosPC",
+					"value": [
+						""
+					]
+				}
 			}
 		],
 		"variables": {
