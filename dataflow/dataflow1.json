@@ -13,11 +13,7 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "flowlet1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          {ID tubo} as string,",
@@ -41,8 +37,7 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 compose(composition: 'undefined') ~> flowlet1@()"
+				"     ignoreNoFilesFound: false) ~> source1"
 			]
 		}
 	}
