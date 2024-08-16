@@ -117,11 +117,8 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "ItemForEach",
-								"value": {
-									"value": "@array(item())",
-									"type": "Expression"
-								}
+								"variableName": "pipelineReturnValue",
+								"setSystemVariable": true
 							}
 						}
 					]
