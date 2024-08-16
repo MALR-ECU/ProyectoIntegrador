@@ -160,8 +160,25 @@
 										},
 										"userProperties": [],
 										"typeProperties": {
+											"source": {
+												"type": "ExcelSource",
+												"storeSettings": {
+													"type": "FileServerReadSettings",
+													"recursive": true,
+													"enablePartitionDiscovery": false
+												}
+											},
 											"enableStaging": false
-										}
+										},
+										"inputs": [
+											{
+												"referenceName": "RegistroInspeccionExcel",
+												"type": "DatasetReference",
+												"parameters": {
+													"index": 0
+												}
+											}
+										]
 									}
 								]
 							}
