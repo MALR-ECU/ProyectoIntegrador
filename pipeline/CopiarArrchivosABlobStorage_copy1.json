@@ -89,7 +89,7 @@
 					"isSequential": false,
 					"activities": [
 						{
-							"name": "Set variable3",
+							"name": "SetNombreArchivoActual",
 							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {
@@ -110,7 +110,7 @@
 							"type": "IfCondition",
 							"dependsOn": [
 								{
-									"activity": "Set variable3",
+									"activity": "SetNombreArchivoActual",
 									"dependencyConditions": [
 										"Succeeded"
 									]
