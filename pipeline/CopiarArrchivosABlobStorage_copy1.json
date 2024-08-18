@@ -124,7 +124,7 @@
 								},
 								"ifFalseActivities": [
 									{
-										"name": "Copy data1",
+										"name": "BackUpRegistrosInspeccion",
 										"type": "Copy",
 										"dependsOn": [],
 										"policy": {
